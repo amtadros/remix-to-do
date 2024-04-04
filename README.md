@@ -1,6 +1,8 @@
 # To Do App
 🚧 Work In Progress
 
+Tracking tasks [here](https://github.com/users/amtadros/projects/1/views/1).
+
 🗒️ Simple To Do App to play with this tech:
 
 - [Remix](https://remix.run/)
