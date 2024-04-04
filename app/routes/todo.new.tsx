@@ -1,3 +1,4 @@
+import { Button, Input } from "@chakra-ui/react";
 import { ActionFunctionArgs, redirect } from "@remix-run/node";
 import { Form } from "@remix-run/react";
 import { createToDo } from "~/actions";
@@ -16,9 +17,9 @@ export default function NewToDoRoute() {
   return (
     <>
       <Form method="post">
-        <input name="title" type="text" />
-        <input name="description" type="text" />
-        <button type="submit">Save</button>
+        <Input name="title" type="text" />
+        <Input name="description" type="text" />
+        <Button type="submit" colorScheme="teal">Save</Button>
       </Form>
     </>
   );
