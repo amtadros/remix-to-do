@@ -1,17 +1,29 @@
 import prisma from "./services/prisma";
 import { ToDoFormValues, ToDoType } from "./types/ToDo";
 
-
 export async function createToDo(values: ToDoFormValues) {
-  const result = await prisma.todos.create({
+  return await prisma.todos.create({
     data: { ...values },
   });
-
-  return result;
 }
 
 export async function getToDos() {
-  const result = await prisma.todos.findMany({});
+  return await prisma.todos.findMany({});
+}
 
-  return result;
+export async function getToDo(id: number) {
+  return await prisma.todos.findUnique({
+    where: {
+      id,
+    }
+  });
+}
+
+export async function editToDo(values: ToDoType) {
+  return await prisma.todos.update({
+    where: {
+      id: values.id,
+    },
+    data: { ...values },
+  });
 }
