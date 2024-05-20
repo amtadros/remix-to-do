@@ -3,11 +3,11 @@ import { ActionFunctionArgs, redirect } from "@remix-run/node";
 import { Form } from "@remix-run/react";
 import { createToDo } from "~/actions";
 
-import { ToDoFormValues } from "~/types/ToDo";
+import {  ToDoType } from "~/types/ToDo";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
-  const values = Object.fromEntries(formData) as unknown as ToDoFormValues;
+  const values = Object.fromEntries(formData) as unknown as ToDoType;
 
   createToDo(values);
   return redirect("/");
